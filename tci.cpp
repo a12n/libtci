@@ -15,7 +15,7 @@ get(const std::string& path, T& ans)
 
     if (ifs.good()) {
         ifs >> ans;
-        return true;
+        return !ifs.bad() && !ifs.fail();
     }
     return false;
 }
@@ -28,7 +28,7 @@ get<std::string>(const std::string& path, std::string& ans)
 
     if (ifs.good()) {
         std::getline(ifs, ans);
-        return true;
+        return !ifs.bad() && !ifs.fail();
     }
     return false;
 }
@@ -44,11 +44,8 @@ set(const std::string& path, const T& val)
 {
     std::ofstream ofs((base_path + path).c_str(), std::ios_base::out | std::ios_base::trunc);
 
-    if (ofs.good()) {
-        ofs << val << '\n';
-        return true;
-    }
-    return false;
+    ofs << val << '\n';
+    return ofs.good();
 }
 
 template bool set<int>(const std::string&, const int&);
@@ -63,7 +60,7 @@ value(const std::string& path)
     T ans;
 
     if (!get<T>(path, ans)) {
-        throw std::runtime_error("Value '" + path + "' not found");
+        throw std::runtime_error("Unable to read '" + path + "' value");
     }
     return ans;
 }
