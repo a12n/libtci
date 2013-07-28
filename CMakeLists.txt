@@ -22,5 +22,5 @@ if(CMAKE_COMPILER_IS_GNUCXX)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++98")
 endif(CMAKE_COMPILER_IS_GNUCXX)
 
-install(FILES tci.hpp DESTINATION include)
+install(FILES tci.h tci.hpp DESTINATION include)
 install(TARGETS tci DESTINATION lib)
