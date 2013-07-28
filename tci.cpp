@@ -2,6 +2,7 @@
 #include <fstream>
 #include <stdexcept>
 
+#include "tci.h"
 #include "tci.hpp"
 
 namespace config {
