@@ -13,11 +13,8 @@ get(const std::string& path, T& ans)
 {
     std::ifstream ifs((base_path + path).c_str(), std::ios_base::in);
 
-    if (ifs.good()) {
-        ifs >> ans;
-        return !ifs.bad() && !ifs.fail();
-    }
-    return false;
+    ifs >> ans;
+    return !ifs.bad() && !ifs.fail();
 }
 
 template <>
@@ -26,11 +23,8 @@ get<std::string>(const std::string& path, std::string& ans)
 {
     std::ifstream ifs((base_path + path).c_str(), std::ios_base::in);
 
-    if (ifs.good()) {
-        std::getline(ifs, ans);
-        return !ifs.bad() && !ifs.fail();
-    }
-    return false;
+    std::getline(ifs, ans);
+    return !ifs.bad() && !ifs.fail();
 }
 
 template bool get<int>(const std::string&, int&);
