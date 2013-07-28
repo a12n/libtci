@@ -2,7 +2,7 @@
 #include <fstream>
 #include <stdexcept>
 
-#include "config.hpp"
+#include "tci.hpp"
 
 namespace config {
 

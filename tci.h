@@ -1,8 +1,8 @@
 
 #pragma once
 
-#ifndef __CONFIG_H_INCLUDED__
-#define __CONFIG_H_INCLUDED__
+#ifndef __TCI_H_INCLUDED__
+#define __TCI_H_INCLUDED__
 
 #ifdef __cplusplus
 extern "C" {
@@ -27,4 +27,4 @@ config_int_value(const char* path, int def);
 } // extern "C"
 #endif  /* __cplusplus */
 
-#endif  /* __CONFIG_H_INCLUDED__ */
+#endif  /* __TCI_H_INCLUDED__ */

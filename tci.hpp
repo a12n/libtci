@@ -1,8 +1,8 @@
 
 #pragma once
 
-#ifndef __CONFIG_HPP_INCLUDED__
-#define __CONFIG_HPP_INCLUDED__
+#ifndef __TCI_HPP_INCLUDED__
+#define __TCI_HPP_INCLUDED__
 
 #include <string>
 
@@ -30,4 +30,4 @@ value(const std::string& path, const T& def);
 
 } // namespace config
 
-#endif  // __CONFIG_HPP_INCLUDED__
+#endif  // __TCI_HPP_INCLUDED__
