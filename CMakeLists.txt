@@ -8,7 +8,7 @@ option(LIBCONFIG_WITH_SHARED
 
 if(LIBCONFIG_WITH_SHARED)
   add_library(config SHARED config.cpp)
-  set_target_properties(config PROPERTIES SOVERSION "0.0.1")
+  set_target_properties(config PROPERTIES SOVERSION "0.1.0")
 else(LIBCONFIG_WITH_SHARED)
   add_library(config STATIC config.cpp)
 endif(LIBCONFIG_WITH_SHARED)
