@@ -8,7 +8,7 @@ option(LIBTCI_WITH_SHARED
 
 if(LIBTCI_WITH_SHARED)
   add_library(tci SHARED tci.cpp)
-  set_target_properties(tci PROPERTIES SOVERSION "1.0.2")
+  set_target_properties(tci PROPERTIES SOVERSION "2.0.0")
 else(LIBTCI_WITH_SHARED)
   add_library(tci STATIC tci.cpp)
 endif(LIBTCI_WITH_SHARED)
@@ -22,5 +22,5 @@ if(CMAKE_COMPILER_IS_GNUCXX)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++98")
 endif(CMAKE_COMPILER_IS_GNUCXX)
 
-install(FILES tci.h tci.hpp DESTINATION include)
+install(FILES tci.hpp DESTINATION include)
 install(TARGETS tci DESTINATION lib)
