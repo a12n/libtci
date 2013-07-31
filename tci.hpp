@@ -1,3 +1,4 @@
+// License: WTFPL (http://www.wtfpl.net/)
 
 #pragma once
 
