@@ -28,6 +28,7 @@ get<std::string>(const std::string& path, std::string& ans)
     return !ifs.bad() && !ifs.fail();
 }
 
+template bool get<float>(const std::string&, float&);
 template bool get<int>(const std::string&, int&);
 template bool get<std::string>(const std::string&, std::string&);
 
@@ -43,6 +44,7 @@ set(const std::string& path, const T& val)
     return ofs.good();
 }
 
+template bool set<float>(const std::string&, const float&);
 template bool set<int>(const std::string&, const int&);
 template bool set<std::string>(const std::string&, const std::string&);
 
@@ -60,6 +62,7 @@ value(const std::string& path)
     return ans;
 }
 
+template float value<float>(const std::string&);
 template int value<int>(const std::string&);
 template std::string value<std::string>(const std::string&);
 
@@ -76,6 +79,7 @@ value(const std::string& path, const T& def)
     }
 }
 
+template float value<float>(const std::string&, const float&);
 template int value<int>(const std::string&, const int&);
 template std::string value<std::string>(const std::string&, const std::string&);
 
