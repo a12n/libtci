@@ -11,7 +11,13 @@ namespace config {
 
 const std::string base_path = "/etc/config/";
 
-// Instantiated only for 'int' and 'std::string' types.
+// Instantiated only for types:
+//  float
+//  int
+//  std::string
+//  std::vector<float>
+//  std::vector<int>
+//  std::vector<std::string>
 
 template <class T>
 bool
