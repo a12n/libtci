@@ -9,6 +9,9 @@
 #include "tci.hpp"
 
 namespace config {
+
+std::string base_path = "/etc/config/";
+
 namespace {
 
 // Get value

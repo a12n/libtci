@@ -9,7 +9,7 @@
 
 namespace config {
 
-const std::string base_path = "/etc/config/";
+extern std::string base_path;
 
 // Instantiated only for types:
 //  float
