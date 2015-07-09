@@ -8,7 +8,7 @@ option(LIBTCI_WITH_SHARED
 
 if(LIBTCI_WITH_SHARED)
   add_library(tci SHARED tci.cpp tci2.cpp)
-  set_target_properties(tci PROPERTIES SOVERSION "3.0.0")
+  set_target_properties(tci PROPERTIES SOVERSION "3.0.1")
 else(LIBTCI_WITH_SHARED)
   add_library(tci STATIC tci.cpp tci2.cpp)
 endif(LIBTCI_WITH_SHARED)

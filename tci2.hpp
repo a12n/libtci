@@ -23,7 +23,7 @@ class config
 {
 public:
     explicit
-    config(const std::string& base = "/etc/config");
+    config(const std::string& base = "/etc/config/");
 
     template <class T>
     bool
