@@ -55,8 +55,7 @@ struct get_impl<std::vector<std::string> >
     {
         std::string t;
         x.clear();
-        while (i.good()) {
-            std::getline(i, t);
+        while (std::getline(i, t).good()) {
             x.push_back(t);
         }
         return !i.bad() && (!i.fail() || !x.empty());
