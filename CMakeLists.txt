@@ -7,10 +7,10 @@ option(LIBTCI_WITH_SHARED
   OFF)
 
 if(LIBTCI_WITH_SHARED)
-  add_library(tci SHARED tci.cpp tci2.cpp)
-  set_target_properties(tci PROPERTIES SOVERSION "3.0.3")
+  add_library(tci SHARED tci.cpp)
+  set_target_properties(tci PROPERTIES SOVERSION "3.0.4")
 else(LIBTCI_WITH_SHARED)
-  add_library(tci STATIC tci.cpp tci2.cpp)
+  add_library(tci STATIC tci.cpp)
 endif(LIBTCI_WITH_SHARED)
 
 if(CMAKE_COMPILER_IS_GNUCXX)
