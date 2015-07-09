@@ -1,39 +1,52 @@
 // License: WTFPL (http://www.wtfpl.net/)
 
+// Deprecated, use tci2.hpp.
+
 #pragma once
 
 #ifndef __TCI_HPP_INCLUDED__
 #define __TCI_HPP_INCLUDED__
 
-#include <string>
+#include <stdexcept>
+
+#include "tci2.hpp"
 
 namespace config {
 
 extern std::string base_path;
 
-// Instantiated only for types:
-//  float
-//  int
-//  std::string
-//  std::vector<float>
-//  std::vector<int>
-//  std::vector<std::string>
+template <class T>
+bool
+get(const std::string& path, T& ans)
+{
+    return tci::config(base_path).get<T>(path, ans);
+}
 
 template <class T>
 bool
-get(const std::string& path, T& ans);
-
-template <class T>
-bool
-set(const std::string& path, const T& val);
+set(const std::string& path, const T& val)
+{
+    try {
+        tci::config(base_path).set<T>(path, val);
+        return true;
+    } catch (const std::runtime_error&) {
+        return false;
+    }
+}
 
 template <class T>
 T
-value(const std::string& path);
+value(const std::string& path)
+{
+    return tci::config(base_path).value<T>(path);
+}
 
 template <class T>
 T
-value(const std::string& path, const T& def);
+value(const std::string& path, const T& def)
+{
+    return tci::config(base_path).value<T>(path, def);
+}
 
 } // namespace config
 
