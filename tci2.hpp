@@ -39,6 +39,9 @@ public:
     value(const std::string& path, const T& def) const;
 
 private:
+    static std::string
+    dir_path_(const std::string& path);
+
     const std::string base_;
 };
 
@@ -157,7 +160,7 @@ struct set_impl<std::vector<T> >
 } // namespace internal
 
 config::config(const std::string& base) :
-    base_(base)
+    base_(dir_path_(base))
 {
 }
 
@@ -199,6 +202,12 @@ config::value(const std::string& path, const T& def) const
     } catch (const std::runtime_error&) {
         return def;
     }
+}
+
+std::string
+config::dir_path_(const std::string& path)
+{
+    return (*path.rbegin() == '/') ? path : (path + '/');
 }
 
 } // namespace tci
