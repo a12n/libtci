@@ -47,34 +47,32 @@ private:
 
 //----------------------------------------------------------------------------
 
-extern config default_config;
-
 template <class T>
 bool
 get(const std::string& path, T& ans)
 {
-    return default_config.get<T>(path, ans);
+    return config().get<T>(path, ans);
 }
 
 template <class T>
 void
 set(const std::string& path, const T& val)
 {
-    default_config.set<T>(path, val);
+    config().set<T>(path, val);
 }
 
 template <class T>
 T
 value(const std::string& path)
 {
-    return default_config.value<T>(path);
+    return config().value<T>(path);
 }
 
 template <class T>
 T
 value(const std::string& path, const T& def)
 {
-    return default_config.value<T>(path, def);
+    return config().value<T>(path, def);
 }
 
 } // namespace tci

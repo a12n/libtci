@@ -171,6 +171,4 @@ template std::vector<float> config::value<std::vector<float> >(const std::string
 template std::vector<int> config::value<std::vector<int> >(const std::string&, const std::vector<int>&) const;
 template std::vector<std::string> config::value<std::vector<std::string> >(const std::string&, const std::vector<std::string>&) const;
 
-config default_config;
-
 } // namespace tci
