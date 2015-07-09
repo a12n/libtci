@@ -83,7 +83,6 @@ struct set_impl<std::vector<T> >
     operator()(std::ostream& o, const std::vector<T>& x) const
     {
         std::copy(x.begin(), x.end(), std::ostream_iterator<T>(o, "\n"));
-        o << '\n';
         return o.good();
     }
 };
