@@ -1,6 +1,6 @@
 // License: WTFPL (http://www.wtfpl.net/)
 
-// Deprecated, use tci2.hpp.
+// Deprecated. Always include "tci.hpp" but use API from "tci2.hpp".
 
 #pragma once
 
