@@ -159,6 +159,7 @@ struct set_impl<std::vector<T> >
 
 } // namespace internal
 
+inline
 config::config(const std::string& base) :
     base_(dir_path_(base))
 {
@@ -204,6 +205,7 @@ config::value(const std::string& path, const T& def) const
     }
 }
 
+inline
 std::string
 config::dir_path_(const std::string& path)
 {
